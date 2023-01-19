@@ -1,0 +1,52 @@
+.title {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    font-size: 2em;
+    text-shadow: 0 0 2px black;
+    text-align: center;
+    margin-right: 100px;
+}
+
+#chart {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+    padding-top: 10px;
+    box-shadow: 0 0 0.5em black;
+}
+
+.mtext {
+    font-size: 25px;
+    text-transform: capitalize;
+    text-shadow: 0 0 0.2px black;
+}
+
+#movetxt {
+    -webkit-animation: moving 1s infinite alternate-reverse;
+    animation: moving 1s infinite alternate-reverse;
+}
+
+@keyframes moving {
+    from {
+        transform: translateY(0px);
+        color: darkred;
+    }
+    to {
+        transform: translateY(20px);
+        color: black;
+    }
+}
+
+.popbtn {
+    height: 35px;
+    width: 90px;
+    color: white;
+    box-shadow: 0 0 0.1em black;
+    border-radius: 5px;
+}
+
+.popbtn:hover {
+    background-color: lightcoral;
+    color: black;
+}

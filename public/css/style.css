@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* //Background */
+
+.bg {
+    animation: slide 10s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #fa81a1 50%, #f5a6b0 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .7;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 10s;
+}
+
+.bg3 {
+    animation-duration: 10s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+/* 
+body {
+    background-color: black;
+} */
+
+.logo {
+    height: 38px;
+    filter: drop-shadow(3px 3px 5px whitesmoke) invert(100%);
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5em !important;
+    font-weight: border;
+}
+
+.navbar a {
+    font-size: 1em;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: whitesmoke !important;
+}
+
+.navbar a:hover {
+    color: black !important;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+.hf {
+    /* height: 50px; */
+    padding-left: 100px;
+    padding-right: 100px;
+    box-shadow: 0 0 0.6em black;
+    color: whitesmoke !important;
+    background-color: #61617b;
+    /* font-weight: 900; */
+    font-size: 16px;
+}
+
+.footer {
+    text-align: center;
+    font-weight: lighter;
+}
+
+
+/* Body- name */
+
+.brand-name {
+    font-size: 80px;
+    font-weight: 400;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* text-shadow: 0 0 5px black; */
+}
+
+
+/* Image */
+
+.animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    filter: drop-shadow(5px 5px 8px black);
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+
+/* About Page */
+
+tr:nth-child(odd) {
+    background-color: rgb(241, 213, 232);
+}
+
+th {
+    text-shadow: 0 0 0.1em cornflowerblue;
+}

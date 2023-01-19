@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    {{!-- Custom Links --}}
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../custom_css/style.css">
+    <link rel="stylesheet" href="../custom_css/userstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://unpkg.com/@mongodb-js/charts-embed-dom"></script>
+<link rel="shortcut icon" href="../../public//images/Logo.png" type="image/x-icon">  
+
+</head>
+
+<body>
+    {{>userheader}}
+
+    <div class="container-fluid pt-5 " style="height:100%">
+        <div class="row col-md-12 pb-2">
+            <div class="title" id="welcome">
+                <h1>Welcome
+                    {{name}}
+                </h1>
+            </div>
+
+
+            <div class="col-md-10 mt-3" style="margin-left: 100px;">
+                <div class="row">
+                    <div class="col-2">
+                        <button type="button" class="addnew p-1 btn btn-success" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"><i class="fas
+              fa-arrow-alt-circle-right fa-1x"></i>&nbsp;New Entry</button>
+                    </div>
+                    <div class="col">
+                        <marquee>Please wait for <strong>1 MINUTE</strong> for new entry to get updated in our server
+                            and then
+                            click "REFRESH"</marquee>
+
+                    </div>
+                    <div class="col-1" style="align-items: left;text-align: left;">
+                        <button type="button" id="refres" class="addnew p-1 btn btn-primary "></i>&nbsp;Refresh</button>
+                    </div>
+
+
+                <br />
+                <div class="row">
+                    <div class="mt-3 col text-center mtext bg-success" id="">
+                        healthy adults need between 7 and 9 hours of sleep per night
+                    </div>
+                    <iframe
+                        style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"
+                        width="640" height="480" src="https://charts.mongodb.com/charts-project-0-hvmmx/embed/charts?id=e4b5c79b-1013-47fb-8e07-8e39395eabe4&autoRefresh=10&theme=light&
+filter={'firstname':'{{name}}'}"></iframe>
+                    {{!-- <div id="chart" class="col"></div> --}}
+                    
+
+                </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Enter Details:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form method="POST" action="/home">
+                                    <div class="mb-3">
+                                        <label for="date" class="col-form-label">Date:</label>
+                                        <input type="date" class="form-control" name="date" id="date">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="time" class="col-form-label">Sleep Time:</label>
+                                        <label for="time" class="col-form-label">Hours: [Value : 1 - 24]</label>
+                                        <input type="number" class="form-control" name="stimehrs" id="stimehrs">
+                                        <label for="time" class="col-form-label">Minutes: [Value : 1 - 60]</label>
+                                        <input type="number" class="form-control" name="stimemin" id="stimemin">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="time" class="col-form-label">Wake-Up Time:</label>
+                                        <label for="time" class="col-form-label">Hours: [Value : 1 - 24]</label>
+                                        <input type="number" class="form-control" name="wtimehrs" id="wtimehrs">
+                                        <label for="time" class="col-form-label">Minutes: [Value : 1 - 60]</label>
+                                        <input type="number" class="form-control" name="wtimemin" id="wtimemin">
+                                    </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <input type="reset" value="Reset" class="bg-secondary popbtn"></input>
+                                <input type="button" data-bs-dismiss="modal" value="Cancel"
+                                    class="bg-danger popbtn"></input>
+                                <input type="submit" value="Submit" class="bg-primary popbtn"></input>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container" style="margin-bottom:50px;height:10vh;margin-left:100px;margin-top:3px">
+
+    </div>
+
+    {{>footer}}
+
+    {{!--
+    <script>
+        var foo = "{{name}}";
+
+        const sdk = new ChartsEmbedSDK({
+            baseUrl: "https://charts.mongodb.com/charts-project-0-hvmmx"
+        });
+
+        const chart = sdk.createChart({
+            chartId: "e4b5c79b-1013-47fb-8e07-8e39395eabe4",
+            filter: { firstname: foo },
+            width: 900,
+
+        });
+
+        chart.render(document.getElementById('chart'));
+        document.getElementById("refres").addEventListener("click", () => {
+            chart.refresh();
+        })
+
+    </script> --}}
+    <script src="../jq/jquery.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.js" type="text/javascript"></script>
+</body>
+
+</html>
